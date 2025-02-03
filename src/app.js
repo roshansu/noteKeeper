@@ -52,7 +52,7 @@ const signinuser = (email, password)=>{
 }
 
 function note(){
-    window.open("/Secure-notes/src/note.html", "_blank");
+    window.open("/src/note.html", "_blank");
 
 }
 
