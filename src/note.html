@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./editorstyle.css">
+    <title>Dashboard</title>
+</head>
+<body>
+
+    <div class="main">
+        <button  id="bar-open" class="bar"><i class="fa-solid fa-bars"></i></button>
+        <button id="bar-close" class="bar"><i class="fa-solid fa-x"></i></button>
+        <div class="left">
+            <div class="head">
+                <input id="title" type="text" placeholder="Add note">
+                <button id="add">Add</button>
+            </div>
+
+            <div class="content">
+                <!-- <div class="lock">
+                    <div class="note-card locked">fddddsssd</div>
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+
+                <div class="lock">
+                    <div class="note-card">fddddsssd</div>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="top">
+                <img src="../assests/Untitled design.png" alt="">
+                <div class="user-name">
+                    <p class="email"></p>
+                </div>
+            </div>
+            <div class="bottom">
+                <button class="button" id="150px">Small <i class="fa-solid fa-table-cells"></i></button>
+                <button class="button" id="200px">Medium <i class="fa-solid fa-grip"></i></button>
+                <button class="button" id="300px">Large <i class="fa-solid fa-border-all"></i></button>
+                <button class="button active" id="180px">Default <i class="fa-solid fa-table"></i></button>
+                <button style="display: none;"  class="Sign">Signout <i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="unlock">
+        <div class="close"><i class="fa-regular fa-circle-xmark"></i></div>
+        <div class="unlock-card">
+            <label for="pass">Enter password</label>
+            <input id="lock-pass" minlength="4" maxlength="12" type="password" placeholder="********">
+            <button id="view">Ok</button>
+        </div>
+    </div>
+
+    <div class="notearea">
+        <button id="back"><i class="fa-solid fa-backward"></i></button>
+        <div class="tool-bar">
+
+            <div class="lock-note">
+                <button id="lock-note"><i class="fa-solid fa-lock"></i></button>
+            </div>
+
+            <div class="note-color box">
+                <p>Background color</p>
+                <div class="bg-colors">
+                    <button onclick="changeBackground('white')" style="background-color: white;"></button>
+                    <button onclick="changeBackground('#bbeaa6')" style="background-color: #bbeaa6;"></button>
+                    <button onclick="changeBackground('#e3c878')" style="background-color: #e3c878;"></button>
+                    <button onclick="changeBackground('#ed9a73')" style="background-color: #ed9a73;"></button>
+                    <input onchange="changeBackground(this.value)"  type="color">
+                </div>
+            </div>
+
+            <div class="text-style box">
+                <button onclick="editText('bold')" class="but"><i class="fa-solid fa-bold"></i></button>
+                <button onclick="editText('italic')" class="but"><i class="fa-solid fa-italic"></i></button>
+                <button onclick="editText('underline')" class="but"><i class="fa-solid fa-underline"></i></button>
+                <button onclick="editText('superscript')" class="but"><i class="fa-solid fa-superscript"></i></button>
+                <button onclick="editText('subscript')" class="but"><i class="fa-solid fa-subscript"></i></button>
+                <button onclick="editText('justifyLeft')" class="but"><i class="fa-solid fa-align-left"></i></button>
+                <button onclick="editText('justifyCenter')" class="but"><i class="fa-solid fa-align-center"></i></button>
+                <button onclick="editText('justifyRight')" class="but"><i class="fa-solid fa-align-right"></i></button>
+                <button onclick="editText('justifyFull')" class="but"><i class="fa-solid fa-align-justify"></i></button>
+                <button onclick="editText('removeFormat')" class="but"><i class="fa-solid fa-text-slash"></i></button>
+            </div>
+
+            <div class="text-heading box">
+                <button onclick="textHeading('<p>')" class="but">p</button>
+                <button onclick="textHeading('<h1>')" class="but">H1</button>
+                <button onclick="textHeading('<h2>')" class="but">H2</button>
+                <button onclick="textHeading('<h3>')" class="but">H3</button>
+                <select id="fontSizeSelector" onchange="changeFontSize(this.value)">
+                        <option value="1">Very Small</option>
+                        <option value="2">Small</option>
+                        <option value="3" selected>Normal</option>
+                        <option value="4">Medium</option>
+                        <option value="5">Large</option>
+                        <option value="6">Extra Large</option>
+                        <option value="7">Huge</option>
+                </select>
+                <select id="fontSelector" onchange="changeFontFamily(this.value)">
+                    <option value="Arial">Arial</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Georgia">Georgia</option>
+                </select>
+            </div>
+
+            <div class="text-color box">
+                <button onclick="fontColor('#bbeaa6')" style="color: #bbeaa6;" class="but1">A</button>
+                <button onclick="fontColor('#e3c878')" style="color: #e3c878;" class="but1">A</button>
+                <button onclick="fontColor('#ed9a73')" style="color: #ed9a73;" class="but1">A</button>
+                <button onclick="fontColor('#00adb5')"  style="color: #00adb5;"  class="but1">A</button>
+                <button onclick="fontColor('#ece8d9')" style="color: #ece8d9;" class="but1">A</button>
+                <button onclick="fontColor('#f8b500')" style="color: #f8b500;" class="but1">A</button>
+                <button onclick="fontColor('white')" style="color: #000000;" class="but1"><i class="fa-solid fa-text-slash"></i></button>
+                <input onchange="fontColor(this.value)" type="color">
+            </div>
+
+            <div class="text-bg-color box">
+                    <button onclick="fontHilite('#17bebb')" style="background-color: #17bebb;" class="but">A</button>
+                    <button onclick="fontHilite('#2e282a')"  style="background-color:  #2e282a;" class="but">A</button>
+                    <button onclick="fontHilite('#cd5334')"  style="background-color: #cd5334;" class="but">A</button>
+                    <button onclick="fontHilite('#edb88b')"   style="background-color: #edb88b;" class="but">A</button>
+                    <button onclick="fontHilite('#432c51')"  style="background-color:  #432c51;" class="but">A</button>
+                    <button onclick="fontHilite('#54a4af')"   style="background-color: #54a4af;" class="but">A</button>
+                    <button onclick="fontHilite('transparent')"   style="background-color: #ffffff;" class="but"><i class="fa-solid fa-text-slash"></i></button>
+                    <input onchange="fontHilite(this.value)" type="color">
+            </div>
+        </div>
+
+        <div id="editor" contenteditable="true" class="write-area"></div>
+    </div>
+
+
+<script>
+            
+    const editor = document.getElementById('editor');
+
+    function changeBackground(color){
+    editor.style.backgroundColor = color;
+    editor.style.color = 'black'
+    }
+
+    function editText(format){
+    document.execCommand(format, false, null);
+    }
+
+    function textHeading(heading){
+    document.execCommand('formatBlock', false, heading);
+
+    }
+
+    function changeFontSize(size){
+    document.execCommand('fontSize', false, size);
+    }
+
+    function changeFontFamily(fontf){
+    document.execCommand('fontName', false, fontf);
+    }
+
+    function fontColor(textcolor){
+    document.execCommand('foreColor', false, textcolor);
+    }
+
+    function fontHilite(hilitecolor){
+    document.execCommand('hiliteColor', false, hilitecolor);
+    }
+
+</script>
+    
+</body>
+<script type="module" src="./notes.js"></script>
+</html>

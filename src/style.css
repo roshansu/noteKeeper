@@ -1,0 +1,362 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    box-sizing: border-box;
+    font-family: 'poppins', serif;
+    position: relative;
+    background-color: #385170;
+}
+
+.main{
+    display: flex;
+}
+
+.left{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:  #385170;
+    padding-top: 100px;
+    padding-right: 250px;
+    gap: 100px;
+}
+
+.bar{
+    display: none;
+}
+
+@media (width<64rem) {
+    .left{
+        width: 100%;
+        padding: 30px 0px;
+        gap: 0px;
+    }
+
+    .bar{
+        all: unset;
+        display: flex;
+        height: 50px;
+        width: 50px;
+        position: fixed;
+        right: 5%;
+        bottom: 5%;
+        font-size: 20px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: #0eb29a;
+        transition: all ease-in-out 0.3s;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
+    .bar:hover{
+        transform: scale(110%);
+    }
+
+    #bar-close{
+        display: none;
+    }
+}
+
+.head{
+    display: flex;
+    gap: 10px;
+}
+
+.head input{
+    all: unset;
+    padding: 15px 20px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: #9fd3c7;
+    font-size: 17px;
+    color: #385170;
+    font-weight: 500;
+    transition: all ease-in-out 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.head input:hover{
+    transform: scale(105%);
+}
+
+.head input::placeholder{
+    color: #385170;
+}
+
+.head button{
+    all: unset;
+    padding: 15px 20px;
+    background-color: #0eb29a;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #ececec;
+    transition: all ease-in-out 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.head button:hover{
+    background-color: #307470;
+    transform: scale(105%);
+}
+
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 30px;
+}
+
+
+.note-card{
+    overflow: hidden;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: inherit; 
+  }
+
+.lock:hover{
+    transform: scale(110%);
+}
+
+
+.locked{
+    filter: blur(3px);
+}
+
+.lock{
+    overflow: hidden;
+    position: relative;
+    color: #ececec;
+    height: 180px;
+    width: 180px;
+    background-color: #3c3c3c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+}
+
+.lock i{
+    color: whitesmoke;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
+.unlock{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.438);
+    top: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    animation: appear 1s forwards;
+}
+
+@keyframes appear {
+    0%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.unlock-card{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 30px;
+    background-color: #323232;
+    gap: 10px;
+    border-radius: 10px;
+    animation: show 1s forwards;
+}
+
+@keyframes show {
+    0%{
+        opacity: 0.5;
+        scale: 0.5;
+    }
+    100%{
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+
+.unlock-card input{
+    all: unset;
+    background-color: #9fd3c7;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: #142d4c;
+    font-size: 17px;
+    text-align: center;
+}
+
+.unlock-card button{
+    all: unset;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+    width: 50%;
+    align-self: center;
+    font-size: 17px;
+    background-color: #8559a5;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.close{
+    position: absolute;
+    top: 30%;
+    right: 30%;
+    font-size: 30px;
+    color: crimson;
+    cursor: pointer;
+}
+
+.blur{
+    filter: blur(5px);
+}
+
+@media (width>64rem) {
+    .right{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #142d4c;
+        border-left: solid 2px gray;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        padding: 0px 10px;
+        gap: 20px;
+    }
+}
+
+@media (width<64rem) {
+    .right{
+        display: none;
+        flex-direction: column;
+        /* background-color: #142d4c; */
+        position: fixed;
+        bottom: 13%;
+        right: 10px;
+        animation: show 1s forwards;
+    }
+    @keyframes show {
+        0%{
+            opacity: 0.5;
+            scale: 0.5;
+        }
+        100%{
+            opacity: 1;
+            scale: 1;
+        }
+    }
+}
+
+.top{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    border-bottom: solid 2px gray;
+    padding-bottom: 10px;
+}
+
+.top img{
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    border: solid 1px gold;
+}
+
+.user-name{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+    color: #ececec;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.email {
+    align-self: center;
+    word-wrap: break-word; /* Works well for breaking long words */
+    overflow-wrap: break-word; /* Alternative way to break long words */
+    max-width: 250px; 
+  }
+
+.bottom{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.active{
+    background-color: #9fd3c7;
+}
+
+.button,.Sign {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: black;
+    border-radius: 10em;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 1em 2em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid black;
+    box-shadow: 0 0 0 0 black;
+  }
+  
+@media (width<64rem) {
+    .button,.sign{
+        padding: 10px;
+    }
+    .top{
+        display: none;
+    }
+}
+
+
+  .button:hover,.Sign:hover {
+    transform: translateY(-4px) translateX(-2px);
+    box-shadow: 2px 5px 0 0 black;
+  };
+  
+  .button:active {
+    transform: translateY(2px) translateX(1px);
+    box-shadow: 0 0 0 0 black;
+  };
+  
+
+

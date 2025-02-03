@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/input.css">
+    <title>Note</title>
+</head>
+<body>
+    
+    <!-- nav -->
+
+    <div class="nav">
+        <h1>NoteKeeper</h1>
+
+        <div class="right">
+            <button id="log" class="login sign">Login <i class="fa-solid fa-right-to-bracket"></i></button>
+            <button class="signup sign" id="sign">Sign up <i class="fa-solid fa-user-plus"></i></button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <div class="head">
+        <div class="title">
+            <h1>Smart Notes, Simple & Fast Recall</h1>
+            <h2>Effortless note-taking, quick access, organize thoughts, sync anywhere, stay productive.</h2>
+        </div>
+
+        <div class="explore">
+            <a href="#main">
+                <button>Explore features <i class="fa-solid fa-arrow-right"></i></button>
+            </a>
+        </div>
+    </div>
+
+    <!-- Registeration form -->
+     <div id="page" class="opac">
+
+        <div class="close"><i class="fa-solid fa-x"></i></div>
+
+        <form class="login-page box">
+            <div class="user-email">
+                <label for="email"> Enter email</label>
+                <input id="email" type="email" placeholder="example@gmail.com" required>
+            </div>
+            <div class="user-email">
+                <label for="password">Enter password</label>
+                <input id="password" type="password" placeholder="********" required>
+            </div>
+            <!-- <div class="no-acc">
+                <a href="">New user ? sign up</a>
+            </div> -->
+    
+            <button type="submit" id="login-button" class="">Login <i class="fa-solid fa-right-to-bracket"></i></button>
+         </form>
+
+         <form class="signup-page box">
+            <div class="user-email">
+                <label for="name"> Enter your full name</label>
+                <input id="name" type="text" placeholder="john doe" required>
+            </div>
+            <div class="user-email">
+                <label for="email"> Enter email</label>
+                <input id="Remail" type="email" placeholder="example@gmail.com" required>
+            </div>
+
+            <div class="user-email">
+                <label for="password">Create password</label>
+                <input id="Npassword" type="password" placeholder="********" required>
+            </div>
+
+            <!-- <div class="no-acc">
+                <a href="">Existing user ? login</a>
+            </div> -->
+    
+            <button type="submit" id="sign-button" class="sign">Sign up <i class="fa-solid fa-user-plus"></i></button>
+         </form>
+     </div>
+
+    <!-- start -->
+     <a class="start" href="#main">
+        <div><i class="fa-solid fa-pen-to-square"></i></div>
+     </a>
+
+    <!-- MAin -->
+
+    <div id="main" class="main">
+        <div class="card anim">
+            <img src="./assests/1.png" alt="">
+
+            <div class="info">
+                <h1>Secure notes</h1>
+                <h3>Your thoughts, ideas, and to-dos are protected with top-tier security, keeping your data safe.</h3>
+            </div>
+        </div>
+
+        <div class="card anim">
+            <img src="./assests/2.png" alt="">
+
+            <div class="info">
+                <h1>Lock your notes</h1>
+                <h3>Add an extra layer of privacy by locking sensitive notes with a password or PIN.</h3>
+            </div>
+        </div>
+
+        <div class="card anim">
+            <img src="./assests/3.png" alt="">
+
+            <div class="info">
+                <h1>Rich text editor</h1>
+                <h3>Format your notes your way—bold, italic, lists, and more for clear, organized content.</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="foot anim">
+        <div class="about">
+            <h1>About me</h1>
+            <h3>I'm Roshan, a BCA student at Shobhit University, deeply passionate about software development. Coding isn’t just a skill for me—it’s an art of solving problems and creating something impactful.</h3>
+        </div>
+
+        <h2>Follow me</h2>
+
+        <div class="links">
+            <a target="_blank" href="https://github.com/roshansu">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/in/roshan-kumar-960184291/">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+        </div>
+
+        <h4>© 2025 NoteKeeper All rights reserved.</h4>
+    </div>
+
+    <a style="display: none;" href="./src/note.html"></a>
+</body>
+<script type="module"  src="./src/app.js"></script>
+</html>
