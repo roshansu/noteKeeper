@@ -225,7 +225,7 @@ function validatePassword(id){
             closePass();
             gotoNote();
             return;            
-        }
+        }else
         alert('wrong password');
         return;
     })
@@ -265,8 +265,8 @@ function setPass(){
         if(currPass.length < 4 ){
             alert('password must be greater or equal to 4');  
             return;       
-        }
-        alert('successful set pass');
+        }else
+        alert('successful');
         prevData[eventId].password = currPass;
         removePassDb();
         
